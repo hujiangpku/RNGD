@@ -5,14 +5,14 @@ function  demo_mc_ml
 % -----------------------------------------------------------------------
 % Reference:
 %  J. Hu, R. Ao, A. M.-C. So, M. Yang, Z. Wen, 
-%  Riemannian Natural Gradient Methods.
+%  Riemannian Natural Gradient Methods. SIAM Journal on Scientific Computing.
 %
 %  Author: J. Hu, Z. Wen, R. Ao
 %  Version 1.0 .... 2022/12
 
 %% set parameters
 maxepoch = 30;
-dir = "./fig/ml/"+string(maxepoch)+"epoch";
+dir = "./results/mc/ml/"+string(maxepoch)+"epoch";
 mkdir  (dir);
 N = 3952;
 d = 6040;
@@ -126,7 +126,6 @@ clear options;
 options.verbosity = 1;
 options.batchsize = batchsize;
 options.update_type='rngd';
-%     options.maxepoch = maxepoch / (1 + 2 * inner_repeat);
 options.maxepoch = maxepoch / (1 + inner_repeat);
 options.tolgradnorm = tolgradnorm;
 options.rngd_type = 1;
@@ -153,7 +152,6 @@ ax1 = gca;
 set(ax1,'FontSize',fs);
 xlabel(ax1,'#grad/N','FontName','Arial','FontSize',fs);
 ylabel(ax1,'MSE on training set','FontName','Arial','FontSize',fs);
-%     legend('RCG', 'RSGD', 'RSVRG','RNGD','RNGD-TR');
 legend('RNGD');
 filename = "train-epoch";
 saveas(gcf, dir+'/'+filename+'.png','png');
@@ -167,7 +165,6 @@ ax1 = gca;
 set(ax1,'FontSize',fs);
 xlabel(ax1,'time','FontName','Arial','FontSize',fs);
 ylabel(ax1,'MSE on training set','FontName','Arial','FontSize',fs);
-%     legend('RCG', 'RSGD', 'RSVRG','RNGD','RNGD-TR');
 legend('RNGD');
 filename = "train-time";
 saveas(gcf, dir+'/'+filename+'.png','png');

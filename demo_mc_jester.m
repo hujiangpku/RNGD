@@ -5,14 +5,14 @@ function  demo_mc_jester
 % -----------------------------------------------------------------------
 % Reference:
 %  J. Hu, R. Ao, A. M.-C. So, M. Yang, Z. Wen, 
-%  Riemannian Natural Gradient Methods.
+%  Riemannian Natural Gradient Methods. SIAM Journal on Scientific Computing.
 %
 %  Author: J. Hu, Z. Wen, R. Ao
 %  Version 1.0 .... 2022/12
 
 %% set parameters
 maxepoch = 36;
-dir = "./fig/jester/"+string(maxepoch)+"epoch";
+dir = "./results/mc/jester/"+string(maxepoch)+"epoch";
 mkdir  (dir);
 N = 100;
 d = 24983;
@@ -142,7 +142,6 @@ clear options;
 options.verbosity = 1;
 options.batchsize = batchsize;
 options.update_type='rngd';
-%     options.maxepoch = maxepoch / (1 + 2 * inner_repeat);
 options.maxepoch = maxepoch / (1 + inner_repeat);
 options.tolgradnorm = tolgradnorm;
 options.rngd_type = 1;

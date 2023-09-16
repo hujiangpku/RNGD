@@ -5,7 +5,7 @@ function  demo_sl_school
 % -----------------------------------------------------------------------
 % Reference:
 %  J. Hu, R. Ao, A. M.-C. So, M. Yang, Z. Wen, 
-%  Riemannian Natural Gradient Methods.
+%  Riemannian Natural Gradient Methods. SIAM Journal on Scientific Computing.
 %
 %  Author: J. Hu, Z. Wen, R. Ao
 %  Version 1.0 .... 2022/12
@@ -45,7 +45,6 @@ problem.r = 6; % Rank
 problem.m = size(problem.data(1).X, 2); % Number of features
 
 problem.M = grassmannfactory(problem.m, problem.r);
-% problem.M = stiefelfactory(problem.m, problem.r);
 
 problem.cost = @func_value;
 
@@ -65,7 +64,7 @@ maxepoch = 72;
 batchsize = 1;
 inner_repeat = 1;
 problem.ncostterms = T;
-dir = "./fig/sl/"+string(maxepoch)+"epoch";
+dir = "./results/sl/"+dataset+string(maxepoch)+"epoch";
 mkdir  (dir);
 
 problem.partialegrad = @partialegrad;
@@ -76,7 +75,7 @@ problem.partialegradw = @partialegradw;
 options.verbosity = 1;
 options.batchsize = 1;
 options.update_type='rngd';
-options.maxepoch = maxepoch / (1 + 1 * inner_repeat);
+options.maxepoch = maxepoch / (1 + inner_repeat);
 options.tolgradnorm = tolgradnorm;
 options.rngd_type = 1;
 options.stepsize_type = 'fix';
@@ -115,7 +114,7 @@ ax1 = gca;
 set(ax1,'FontSize',fs);
 xlabel(ax1,'time','FontName','Arial','FontSize',fs);
 ylabel(ax1,'NMSE on training set','FontName','Arial','FontSize',fs);
-legend('RCG','RSGD', 'RASA', 'RSVRG','RNGD');
+legend('RNGD');
 filename = string(dataset) + "train-time"; 
 saveas(gcf, dir+'/'+filename+'.png','png');
 
@@ -128,7 +127,7 @@ ax1 = gca;
 set(ax1,'FontSize',fs);
 xlabel(ax1,'#grad/N','FontName','Arial','FontSize',fs);
 ylabel(ax1,'NMSE on test set','FontName','Arial','FontSize',fs);
-legend('RCG','RSGD', 'RASA', 'RSVRG','RNGD');
+legend('RNGD');
 filename = string(dataset) + "test-epoch";
 saveas(gcf, dir+'/'+filename+'.png','png');
 

@@ -9,7 +9,7 @@ function [x, cost, info, options] = Riemannian_ngd(problem, x, options)
 % -----------------------------------------------------------------------
 % Reference:
 %  J. Hu, R. Ao, A. M.-C. So, M. Yang, Z. Wen, 
-%  Riemannian Natural Gradient Methods.
+%  Riemannian Natural Gradient Methods. SIAM Journal on Scientific Computing.
 %
 %  Author: J. Hu, Z. Wen, R. Ao
 %  Version 1.0 .... 2022/12
