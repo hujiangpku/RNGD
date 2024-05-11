@@ -1,6 +1,7 @@
 # RNGD (Riemannian natural gradient methods)
 
 Authors: [Jiang Hu](https://hujiangpku.github.io/), [Zaiwen Wen](https://bicmr.pku.edu.cn/~wenzw/), [Ruicheng Ao]
+
 Last page update: Dec. 4, 2022
 
 Latest version: 1.0
@@ -16,21 +17,21 @@ References
 ----------
 
 - **RNGD (Riemannian natural gradient methods)**
-  - J. Hu, R. Ao, A. M.-C. So, M. Yang, Z. Wen, "[Riemannian Natural Gradient Methods](https://arxiv.org/abs/2207.07287)" 
+  - J. Hu, R. Ao, A. M.-C. So, M. Yang, Z. Wen, "[Riemannian Natural Gradient Methods, SIAM Journal on Scientific Computing 46.1 (2024): A204-A231.]([https://arxiv.org/abs/2207.07287](https://epubs.siam.org/doi/abs/10.1137/22M1509643?journalCode=sjoce3))" 
 
 The Authors
 -----------
 We hope that the package is useful for your application. If you have any bug reports or comments, please feel free to email one of the toolbox authors:
 
-- Jiang Hu, hujiang at gmail.com
+- Jiang Hu, hujiangopt at gmail.com
 - Zaiwen Wen, wenzw at pku.edu.cn
 
 
 Installation
 -------------
->> startup
+> startup
 
->> demo\_mr\_ml
+> demo\_mr\_ml
 
 License
 ----------
