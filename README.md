@@ -6,7 +6,7 @@ Last page update: Dec. 4, 2022
 
 Latest version: 1.0
 
-Intdocution
+Introduction
 ----------
 
 Riemannian natural gradient methods for solving negative log-probability loss over Riemannian manifold
